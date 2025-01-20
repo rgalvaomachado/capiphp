@@ -1,4 +1,5 @@
 <?php
+    // ESSES SÃO DADOS DO BANCO DE DADOS DO DOCKER
     $_ENV['DATABASE_USERNAME'] = 'root';
     $_ENV['DATABASE_PASSWORD'] = 'root123';
     $_ENV['DATABASE_HOST'] = 'db';
