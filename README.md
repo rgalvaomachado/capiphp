@@ -1,3 +1,11 @@
+# CapiPHP Framework
+
+![Logo do Projeto](public/icon/favicon1.png)
+
+CapiPHP é um framework PHP leve e eficiente, projetado para simplificar o desenvolvimento de aplicações web robustas e escaláveis. Ele oferece uma arquitetura modular, facilitando a organização do código e a integração de novas funcionalidades.
+
+---
+
 # Configuração do Ambiente
 
 Este repositório contém um projeto que requer a configuração de um ambiente específico para funcionar corretamente. Siga os passos abaixo para configurar o ambiente e garantir que tudo esteja funcionando corretamente.
