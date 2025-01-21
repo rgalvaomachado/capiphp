@@ -79,6 +79,13 @@ $(document).ready(function() {
     });
 });
 
+function checkUsuario(){
+    const params = getUrlParameters();
+    if (!params.id) {
+        window.location.assign("/usuario");
+    }
+}
+
 function loadUsuarios(){
     apiResponse = apiGet('/usuarios')
     if(apiResponse.access){
