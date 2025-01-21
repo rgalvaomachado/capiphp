@@ -1,6 +1,8 @@
 # CapiPHP Framework
 
-<img src="/public/icon/favicon1.png" alt="Logo do Projeto" width="200" height="200" style="margin: 0 auto">
+<div align="center">
+  <img src="/public/icon/favicon1.png" alt="Logo do Projeto" width="200" height="200">
+</div>
 
 CapiPHP é um framework PHP leve e eficiente, projetado para simplificar o desenvolvimento de aplicações web robustas e escaláveis. Ele oferece uma arquitetura modular, facilitando a organização do código e a integração de novas funcionalidades.
 
