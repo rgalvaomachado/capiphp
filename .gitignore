@@ -1,4 +1,4 @@
 vendor/
 tmp/
 storage/
-docker/mysql-data/
+docker/mysql-data.old/
