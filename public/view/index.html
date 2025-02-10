@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/public/icon/favicon1.png">
-    <link href="/public/css/global.css" rel="stylesheet">
-    <title>Welcome</title>
+    <title>Bem-vindo ao CapiPHP</title>
+    <link href="/public/css/welcome.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1 class="title">CapiPHP</h1>
-        <br></br>
+    <div class="container">
+        <h1>Bem-vindo ao CapiPHP</h1>
         <img src="/public/icon/favicon1.png" style="height: 250px;">
+        <p>
+            O <strong>CapiPHP</strong> é um framework PHP leve e eficiente, projetado para simplificar o desenvolvimento
+            de aplicações web robustas e escaláveis. Ele oferece uma arquitetura modular, facilitando a organização do código
+            e a integração de novas funcionalidades.
+        </p>
+
+        <h2>Configuração do Ambiente</h2>
+        <p>Siga os passos abaixo para configurar o ambiente corretamente:</p>
+
+        <h3>Pré-requisitos:</h3>
+        <ul>
+            <ol>
+                <li><strong>Banco de dados disponível para importação.</strong></li>
+                <li><strong>Servidor com suporte a PHP.</strong></li>
+            </ol>
+        </ul>
+
+        <h3>Passos para Configuração:</h3>
+        <ol>
+            <li><strong>Importar o banco de dados:</strong>
+                O banco está localizado em <code>/database</code>.
+                <br>
+                Importe-o para o seu sistema.
+            </li>
+            <li><strong>Configurar env.php:</strong> Edite o arquivo <code>env.php</code> com as informações do banco de dados e infraestrutura:</li>
+        </ol>
+
+        <p>
+            Após configurar tudo, você pode testar a conexão acessando a aplicação no navegador.
+        </p>
+
+        <a href="/usuario" class="btn">Exemplo de CRUD de Usuários</a>
     </div>
 </body>
 </html>
