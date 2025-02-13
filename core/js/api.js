@@ -1,7 +1,7 @@
 function apiGet(url, data = null){
     $.ajax({
         method: "GET",
-        url: '/api' + url,
+        url: basePath + '/api' + url,
         headers: {
             "Content-Type": "application/json",
         },

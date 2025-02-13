@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/public/icon/favicon1.png">
-    <link href="/public/css/global.css" rel="stylesheet">
-    <script src="/public/js/jquery-1.11.1.min.js"></script>
-    <script src="/public/js/api.js"></script>
+    <link rel="icon" type="image/x-icon" data-href="/public/icon/favicon1.png">
+    <link data-href="/public/css/global.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7ca1b2bc88.js" crossorigin="anonymous"></script>
-    <link href="/public/view/usuario/styles.css" rel="stylesheet">
-    <script src="/public/view/usuario/index.js"></script>
+    <link data-href="/public/view/usuario/styles.css" rel="stylesheet">
+    <script data-src="/public/view/usuario/index.js"></script>
     <title>Usuario</title>
 </head>
 <body>
-    <label class="title">Usuario</label> <a href="/usuario/criar"><i class="title fa fa-plus-square-o" aria-hidden="true"></i></a>
+    <label class="title">Usuario</label> <a data-href="/usuario/criar"><i class="title fa fa-plus-square-o" aria-hidden="true"></i></a>
     <br>
     <label class="message_alert" id="messageAlert"></label>
     <br>
@@ -34,6 +32,10 @@
         <tbody>
         </tbody>
     </table>
-    <script>loadUsuarios()</script>
+    <script>
+        window.addEventListener('load', function() {
+            loadUsuarios();
+        });
+    </script>
 </body>
 </html>
