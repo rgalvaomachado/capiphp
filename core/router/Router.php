@@ -128,7 +128,9 @@
             $path = $this->pathWeb($url, $routes);
 
             echo "teste";
+            echo "<br>";
             echo $path;
+            echo "<br>";
 
             if(isset($path)){
                 $extension = substr($path, -3);
