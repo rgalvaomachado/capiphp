@@ -25,7 +25,7 @@
 
         function getBaseUrl(){
             $scriptPath = $_SERVER['SCRIPT_NAME'];
-            $baseUrl = str_replace('/core/index.php','', $scriptPath);
+            $baseUrl = str_replace('core/index.php','', $scriptPath);
             return $baseUrl;
         }
 
@@ -106,7 +106,7 @@
 
             foreach($routes as $route){
                 $RoutePath = $this->baseUrl . $route[0];
-                $RouteWeb = $_SERVER['DOCUMENT_ROOT'] . $this->baseUrl . '/public/view' . $route[1];
+                $RouteWeb = $_SERVER['DOCUMENT_ROOT'] . $this->baseUrl . 'public/view' . $route[1];
 
                 if ($url == $RoutePath) {
                     if(is_file($RouteWeb)){
@@ -115,7 +115,7 @@
                 }
             }
 
-            return $_SERVER['DOCUMENT_ROOT'] . $this->baseUrl . '/public/view/404.html';
+            return $_SERVER['DOCUMENT_ROOT'] . $this->baseUrl . 'public/view/404.html';
         }
 
         function runWeb($routes){
@@ -126,11 +126,6 @@
             $url = implode('/',$parametros);
 
             $path = $this->pathWeb($url, $routes);
-
-            echo "teste";
-            echo "<br>";
-            echo $path;
-            echo "<br>";
 
             if(isset($path)){
                 $extension = substr($path, -3);
