@@ -127,6 +127,9 @@
 
             $path = $this->pathWeb($url, $routes);
 
+            echo "teste";
+            echo $path;
+
             if(isset($path)){
                 $extension = substr($path, -3);
                 if ($extension == 'png'){
