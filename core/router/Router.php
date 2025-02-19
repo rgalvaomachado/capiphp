@@ -159,8 +159,7 @@
                         echo "<script src='" . $this->baseUrl . "/core/js/jquery-1.11.1.min.js'></script>";
                         echo "<script src='" . $this->baseUrl . "/core/js/web.js'></script>";
                         echo "<script src='" . $this->baseUrl . "/core/js/api.js'></script>";
-                        include_once $path;     
-                        echo "<script>loadSRC()</script>"; 
+                        include_once $path;
                     } else {
                         echo 'Página não encontrada (adicione uma pagina personalizada em /public/view/404.html)';
                     }
