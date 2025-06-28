@@ -1,5 +1,5 @@
 <?php
-    class CapiphpController extends Controller{
+    class CapiphpController {
         function bemVindo(){
             return json_encode([
                 "access" => true,
