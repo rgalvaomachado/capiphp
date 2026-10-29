@@ -71,9 +71,14 @@
                 $RouteFunction = $route[3];
                 if ($RouteMethod == $this->method && $RoutePath == $path){
                     $Class = new $RouteClass();
-                    if (method_exists($Class,$RouteFunction)){
+                    if (method_exists($Class, $RouteFunction)){
                         http_response_code(200);
-                        echo $Class->$RouteFunction($this->data, $this->token);
+                        $response = $Class->$RouteFunction($this->data, $this->token);
+                        if (is_array($response) || is_object($response)) {
+                            echo json_encode($response);
+                        } else {
+                            echo $response;
+                        }
                         break;
                     } else {
                         http_response_code(405);
@@ -123,36 +128,32 @@
 
             if(isset($path)){
                 $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-                if ($extension == 'png'){
-                    $c = file_get_contents($path,true);
+                $mimeTypes = [
+                    'png'   => 'image/png',
+                    'jpg'   => 'image/jpeg',
+                    'jpeg'  => 'image/jpeg',
+                    'gif'   => 'image/gif',
+                    'svg'   => 'image/svg+xml',
+                    'ico'   => 'image/x-icon',
+                    'webp'  => 'image/webp',
+                    'css'   => 'text/css',
+                    'js'    => 'text/javascript',
+                    'pdf'   => 'application/pdf',
+                    'woff'  => 'font/woff',
+                    'woff2' => 'font/woff2',
+                    'ttf'   => 'font/ttf',
+                    'otf'   => 'font/otf',
+                    'eot'   => 'application/vnd.ms-fontobject',
+                ];
+
+                if (isset($mimeTypes[$extension])){
+                    $c = file_get_contents($path);
                     $size = filesize($path);
-                    header ('Content-Type: image/png');
-                    header ("Content-length: $size");
-                    echo $c;
-                } else if ($extension == 'gif'){
-                    $c = file_get_contents($path,true);
-                    $size = filesize($path);
-                    header ('Content-Type: image/gif');
-                    header ("Content-length: $size");
-                    echo $c;
-                } else if ($extension == 'css'){
-                    $c = file_get_contents($path,true);
-                    $size = filesize($path);
-                    header ('Content-Type: text/css');
-                    header ("Content-length: $size");
-                    echo $c;
-                } else if ($extension == 'js'){
-                    $c = file_get_contents($path,true);
-                    $size = filesize($path);
-                    header ('Content-Type: text/js');
-                    header ("Content-length: $size");
-                    echo $c;
-                } else if ($extension == 'pdf') {
-                    $c = file_get_contents($path, true);
-                    $size = filesize($path);
-                    header('Content-Type: application/pdf');
+                    header('Content-Type: ' . $mimeTypes[$extension]);
                     header("Content-length: $size");
-                    header('Content-Disposition: inline; filename="' . basename($path) . '"');
+                    if ($extension === 'pdf') {
+                        header('Content-Disposition: inline; filename="' . basename($path) . '"');
+                    }
                     echo $c;
                 }else{
                     if(is_file($path)){

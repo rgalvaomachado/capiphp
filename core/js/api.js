@@ -1,14 +1,19 @@
 function apiGet(url, data = null){
+    var responseData = null;
     $.ajax({
         method: "GET",
-        url: basePath + '/api' + url,
+        url: '/api' + url,
         headers: {
             "Content-Type": "application/json",
         },
         data: data,
         async: false,
         complete: function(response) {
-            responseData = JSON.parse(response.responseText);
+            try {
+                responseData = JSON.parse(response.responseText);
+            } catch(e) {
+                responseData = response.responseText;
+            }
         }
     });
 
